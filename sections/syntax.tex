@@ -43,19 +43,15 @@
             \hspace{0.175cm}
             \dsptikzfig{strings/structure/monoid/init}[colour=comb]       &
             introduce                                                       \\
-            \await
             \,\,\dsptikzfig{strings/structure/comonoid/copy}[colour=comb] &
             fork                                                            \\
-            \await
             \,\,\dsptikzfig{strings/structure/monoid/merge}[colour=comb]  &
             join                                                            \\
-            \await
             \,\,\,\,\dsptikzfig{strings/structure/comonoid/discard}[colour=comb]
             \hspace{0.175cm}                                              &
             eliminate                                                       \\
         \end{tabular}
     \end{minipage}
-    \await
     \begin{minipage}{0.33\textwidth}
         \centering
         \alert{categorical structure}
@@ -64,10 +60,8 @@
 
         \renewcommand{\arraystretch}{1.75}
         \begin{tabular}{cl}
-            \await
             \dsptikzfig{strings/category/identity}[colour=comb]  &
             identity                                               \\
-            \await
             \dsptikzfig{strings/symmetric/symmetry}[colour=comb] &
             symmetry                                               \\
         \end{tabular}
@@ -95,8 +89,6 @@
         \centering
         \alert{Values}
 
-        \await
-
         \begin{tabular}{rl}
             \dsptikzfig{circuits/components/values/vs}[val=\belnapfalse] &
             false                                                          \\
@@ -106,6 +98,8 @@
             \dsptikzfig{circuits/components/values/vs}[val=\top]         &
             short circuit
         \end{tabular}
+
+        \dsptikzfig{circuits/a4}
 
     \end{minipage}
     \await
@@ -157,20 +151,5 @@
     \await
     \quad
     \dsptikzfig{strings/traced/trace-rhs}[box=f,colour=seq]
-
-\end{frame}
-\begin{frame}
-    \frametitle{Need an example?}
-
-    \centering
-
-    \await
-
-    \tikzfig{circuits/examples/sr-latch/real-circuit}
-
-    \vspace{1.5em}
-    \await
-
-    \tikzfig{circuits/examples/sr-latch/circuit}
 
 \end{frame}
