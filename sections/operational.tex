@@ -14,9 +14,9 @@
     \vspace{2em}
 
     \(
-    \llbracket\dsptikzfig{strings/category/f}[box=f,colour=seq]\rrbracket
+    \left\llbracket\dsptikzfig{strings/category/f}[box=f,colour=seq]\right\rrbracket
     =
-    \llbracket\dsptikzfig{strings/category/f}[box=g,colour=seq]\rrbracket
+    \left\llbracket\dsptikzfig{strings/category/f}[box=g,colour=seq]\right\rrbracket
     \)
 
     \vspace{2em}
@@ -98,95 +98,6 @@
     \dsptikzfig{strings/category/f}[box=f,colour=seq]
     \Large\(\reductions\)\normalsize
     \dsptikzfig{circuits/productivity/pre-mealy-form}[core=\hat{f},state=\listvar{s}]
-
-\end{frame}
-\begin{frame}
-    \frametitle{The sticking point}
-
-    \centering
-
-    \Large
-
-    What are we going to do about the non-delay-guarded trace?
-
-    \await
-
-    In industry, feedback is usually \alert{delay-guarded}.
-
-    \await
-
-    But this rules out some \alert{clever} circuits!
-
-    \normalsize
-
-    \vspace{1em}
-
-    \scalebox{0.75}{
-        \dsptikzfig{circuits/examples/cyclic-combinational/circuit-scirc-applied-control}
-        \(\Rightarrow\)
-        \dsptikzfig{circuits/examples/cyclic-combinational/reduced-false}
-    }
-
-    \await
-
-    \vspace{1em}
-
-    \scriptsize
-    (And also it would be cheating)
-
-\end{frame}
-\begin{frame}
-    \frametitle{Getting rid of non-delay-guarded feedback}
-
-    \centering
-    \LARGE
-
-    \(\values\) is a \alert{finite} lattice...\
-
-    \await
-    The functions are monotone...
-
-    \await
-    We can compute the \alert{least fixed point} \\ in finite iterations!
-
-\end{frame}
-\begin{frame}
-    \frametitle{Getting rid of non-delay-guarded feedback}
-
-    \centering
-    \[
-        \dsptikzfig{circuits/instant-feedback/f0-box}
-        \coloneqq
-        \dsptikzfig{circuits/instant-feedback/f0-definition}[box=f]
-        \await
-        \qquad
-        \dsptikzfig{circuits/instant-feedback/fkp1-box}
-        \coloneqq
-        \dsptikzfig{circuits/instant-feedback/fkp1-definition}
-    \]
-    \await
-    \[
-        \dsptikzfig{circuits/instant-feedback/equation-lhs}[box=f,trace=x]
-        \quad
-        \reduction
-        \quad
-        \dsptikzfig{circuits/instant-feedback/fixpoint-concrete}
-    \]
-
-\end{frame}
-\begin{frame}
-    \frametitle{Getting rid of non-delay-guarded feedback}
-
-
-    \[
-        \dsptikzfig{circuits/instant-feedback/trand}
-        \quad
-        \await
-        \reduction
-        \quad
-        \dsptikzfig{circuits/instant-feedback/trand-instfb}
-    \]
-
 
 \end{frame}
 \begin{frame}
