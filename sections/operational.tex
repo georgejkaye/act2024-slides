@@ -224,13 +224,34 @@
 
     \vspace{1em}
 
-    \await
+    \dsptikzfig{circuits/productivity/mealy-form}[core=f,state=s]
+    \quad
+    \dsptikzfig{circuits/productivity/mealy-form}[core=f,state=t]
+    \quad
+    \dsptikzfig{circuits/productivity/mealy-form}[core=f,state=u]
+    \quad
+    \(\cdots\)
+
+    Maximum number of states: \(|\values|^{\text{number of delays}}\)
+
+\end{frame}
+\begin{frame}
+    \frametitle{Observe this}
+
+    \centering
     \Large
-    \begin{definition}
-        Two circuits with at most \(c\) delay components are observationally
-        equivalent if the reduction procedure creates the same outputs for all
-        inputs of length \(|\values|^c+1\).
-    \end{definition}
+
+    \(
+    \dsptikzfig{strings/category/f}[colour=seq]
+    \sim
+    \dsptikzfig{strings/category/f}[colour=seq,box=g]
+    \)
+
+    \qquad
+
+    Two circuits are \alert{observationally equivalent} if the
+    reduction procedure creates the same outputs for all inputs of length
+    \(|\values|^{\text{max number of delays}} + 1\).
 
 \end{frame}
 
@@ -240,14 +261,21 @@
     \centering
     \Large
 
-    \begin{theorem}
-        Two circuits are observationally equivalent if and only if they are
-        denotationally equivalent.
-    \end{theorem}
+    \(
+    \dsptikzfig{strings/category/f}[colour=seq]
+    \approx
+    \dsptikzfig{strings/category/f}[colour=seq,box=g]
+    \Leftrightarrow
+    \dsptikzfig{strings/category/f}[colour=seq]
+    \sim
+    \dsptikzfig{strings/category/f}[colour=seq,box=g]
+    \)
 
     \await
 
+    \vspace{1em}
+
     \LARGE
-    Sound and complete \alert{operational semantics}!
+    Denotational semantics \(\cong\) Operational semantics
 
 \end{frame}
