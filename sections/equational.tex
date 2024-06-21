@@ -28,27 +28,27 @@
         \dsptikzfig{strings/structure/monoid/unitality-l-lhs}
         =
         \dsptikzfig{strings/structure/monoid/unitality-l-rhs}
-        \quad
+        \qquad
         \dsptikzfig{strings/structure/monoid/unitality-r-lhs}
         =
         \dsptikzfig{strings/structure/monoid/unitality-r-rhs}
-        \\[0.25em]
-        \rule{\textwidth}{0.1mm}
-        \\[0.5em]
+        \qquad
         \dsptikzfig{circuits/axioms/bottom-delay-lhs}
         =
         \dsptikzfig{circuits/axioms/bottom-delay-rhs}
-        \quad
-        \dsptikzfig{circuits/instant-feedback/equation-lhs}
+        \\[0.25em]
+        \rule{\textwidth}{0.1mm}
+        \\[0.5em]
+        \dsptikzfig{strings/traced/trace-rhs}[colour=comb]
         =
-        \dsptikzfig{circuits/instant-feedback/fixpoint-concrete}
+        \dsptikzfig{circuits/instant-feedback/general}
     \end{gather*}
 
     \Large
     By these equations, \(
-    \dsptikzfig{strings/category/f}[box=F,colour=seq]
+    \dsptikzfig{strings/category/f}[box=f,colour=seq]
     =
-    \dsptikzfig{circuits/productivity/mealy-form}
+    \dsptikzfig{circuits/productivity/mealy-form}[core=\hat{f}]
     \)
 
 \end{frame}
@@ -60,21 +60,19 @@
 
     \await
 
-    Say we have a procedure \(\lvert-\rvert\) for
+    Say we have a procedure \(\mealytofunc\) for
     establishing a \alert{canonical circuit} for a function
     \(\morph{f}{\valuetuple{m}}{\valuetuple{n}}\)
 
     \await
 
-    \vspace{1em}
-
-    A circuit is \alert{normalised} if it is in the image of \(\lvert-\rvert\)
-
-    \await
+    \normalsize
+    \iltikzfig{circuits/axioms/belnap/translation/exploded-form}[box=f]
+    \LARGE
 
     \vspace{1em}
 
-    What equations are needed to \\ normalise any circuit?
+    A circuit is \alert{normalised} if it is in the image of \(\mealytofunc\)
 
 \end{frame}
 \begin{frame}
@@ -280,10 +278,10 @@
     \Large
 
     How to translate between \(
-    \dsptikzfig{circuits/productivity/mealy-form}[core=|f|, colour=comb]
+    \dsptikzfig{circuits/productivity/mealy-form}[core=\mealytofunc[f], colour=comb]
     \)
     and \(
-    \dsptikzfig{circuits/productivity/mealy-form}[core=|g|, state=\listvar{t}, colour=comb]
+    \dsptikzfig{circuits/productivity/mealy-form}[core=\mealytofunc[g], state=\listvar{t}, colour=comb]
     \)?
 
     \await
@@ -317,9 +315,9 @@
     \vspace{1em}
 
     \scalebox{0.7}{\(
-        \dsptikzfig{circuits/productivity/mealy-form}[core=|f|,delay=x, colour=seq]
+        \dsptikzfig{circuits/productivity/mealy-form}[core=\mealytofunc[f],delay=x, colour=seq]
         =
-        \dsptikzfig{circuits/algebraic/state-encoding}[core=|f|,delay=x]
+        \dsptikzfig{circuits/algebraic/state-encoding}[core=\mealytofunc[f],delay=x]
         \)
     }
     \\[0.25em]
@@ -391,11 +389,12 @@
     With these equations we can derive
 
     \vspace{1em}
+    \normalsize
 
     \(
-    \dsptikzfig{circuits/productivity/mealy-form}[core=|f|, colour=seq]
+    \dsptikzfig{circuits/productivity/mealy-form}[core=\mealytofunc[f], colour=seq]
     =
-    \dsptikzfig{circuits/algebraic/state-encoded}[core=|f|,state=\listvar{s}]
+    \dsptikzfig{circuits/algebraic/state-encoded}[core=\mealytofunc[f],state=\listvar{s}]
     \)
 
 
@@ -426,9 +425,9 @@
     \centering
 
     \(
-    \dsptikzfig{circuits/productivity/mealy-form}[core=|f|]
+    \dsptikzfig{circuits/productivity/mealy-form}[core=\mealytofunc[f]]
     =
-    \dsptikzfig{circuits/productivity/mealy-form}[core=|g|]
+    \dsptikzfig{circuits/productivity/mealy-form}[core=\mealytofunc[g]]
     \)
 
     \vspace{1em}
@@ -442,22 +441,22 @@
     \frametitle{It is complete}
 
     \centering
-    \Large
-    By the completeness of the denotational semantics, each stream function
-    has a corresponding \alert{encoded} circuit...
+
+    \(
+    \dsptikzfig{strings/category/f}[colour=seq]
+    \approx
+    \dsptikzfig{strings/category/f}[colour=seq,box=g]
+    \Leftrightarrow
+    \dsptikzfig{strings/category/f}[colour=seq]
+    =
+    \dsptikzfig{strings/category/f}[colour=seq,box=g]
+    \)
 
     \await
-    \vspace{1em}
 
-    \begin{theorem}
-        \centering
-        Two circuits are equal by the equations if and only if they are
-        denotationally equal.
-    \end{theorem}
-
-    \await
+    \vspace{2em}
 
     \LARGE
-    Sound and complete \alert{algebraic semantics}!
+    Denotational semantics \(\cong\) Algebraic semantics
 
 \end{frame}

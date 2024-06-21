@@ -30,17 +30,6 @@
 \begin{frame}
     \frametitle{Reducing it down}
 
-    \await
-
-    \centering
-    \scalebox{4}{\textbf{Operational}}
-
-    \scalebox{4}{\textbf{semantics}}
-
-\end{frame}
-\begin{frame}
-    \frametitle{Reducing it down}
-
     \centering
     \LARGE
 
@@ -232,6 +221,8 @@
     \quad
     \(\cdots\)
 
+    \vspace{1em}
+
     Maximum number of states: \(|\values|^{\text{number of delays}}\)
 
 \end{frame}
@@ -277,5 +268,46 @@
 
     \LARGE
     Denotational semantics \(\cong\) Operational semantics
+
+\end{frame}
+\begin{frame}
+    \frametitle{A little bit different}
+
+    \centering
+
+    \Large
+    This operational semantics is a bit \alert{different} to some others...
+
+
+    \scriptsize
+    (cf.\ signal flow graphs)
+    \normalsize
+
+    \[
+        t
+        \
+        \triangleright
+        \
+        \dsptikzfig{strings/structure/comonoid/copy-notile}
+        \ \
+        \xrightarrow[k\ k]{k}
+        \ \
+        t+1
+        \
+        \triangleright
+        \
+        \dsptikzfig{strings/structure/comonoid/copy-notile}
+        \qquad\qquad
+        \await
+        \dsptikzfig{circuits/axioms/fork-lhs}
+        \reduction
+        \dsptikzfig{circuits/axioms/fork-rhs}
+    \]
+
+    \vspace{1em}
+    \pause
+
+    \Large
+    We want to \alert{transform} the circuit
 
 \end{frame}
