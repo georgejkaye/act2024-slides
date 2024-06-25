@@ -17,35 +17,35 @@
 
     \renewcommand{\arraystretch}{2}
     \begin{tabular}{cccccc}
-        \multicolumn{2}{c}{\visible<2->{\alert{gates}}}
-                                                                                    &
-        \multicolumn{2}{c}{\visible<3->{\alert{(co)monoid structure}}}              &
+        \multicolumn{2}{c}{\visible<\iftoggle{static}{1-}{2-}>{\alert{gates}}}
+                                                                                                           &
+        \multicolumn{2}{c}{\visible<\iftoggle{static}{1-}{3-}>{\alert{(co)monoid structure}}}              &
 
-        \multicolumn{2}{c}{\visible<3->{\alert{categorical structure}}}
+        \multicolumn{2}{c}{\visible<\iftoggle{static}{1-}{3-}>{\alert{categorical structure}}}
         \\
-        \visible<2->{\dsptikzfig{circuits/components/gates/and}}                    &
-        \visible<2->{AND gate}                                                      &
+        \visible<\iftoggle{static}{1-}{2-}>{\dsptikzfig{circuits/components/gates/and}}                    &
+        \visible<\iftoggle{static}{1-}{2-}>{AND gate}                                                      &
         \hspace{0.175cm}
-        \visible<3->{\dsptikzfig{strings/structure/monoid/init}[colour=comb]}       &
-        \visible<3->{introduce}                                                     &
-        \visible<3->{\dsptikzfig{strings/category/identity}[colour=comb]}           &
-        \visible<3->{identity}                                                        \\
-        \visible<2->{\dsptikzfig{circuits/components/gates/or}}                     &
-        \visible<2->{OR gate}                                                       &
-        \visible<3->{\,\,\dsptikzfig{strings/structure/comonoid/copy}[colour=comb]} &
-        \visible<3->{fork}                                                          &
-        \visible<3->{\dsptikzfig{strings/symmetric/symmetry}[colour=comb]}          &
-        \visible<3->{symmetry}                                                        \\
-        \visible<2->{\dsptikzfig{circuits/components/gates/not}}                    &
-        \visible<2->{NOT gate}                                                      &
-        \visible<3->{\,\,\dsptikzfig{strings/structure/monoid/merge}[colour=comb]}  &
-        \visible<3->{join}                                                            \\
-                                                                                    &
-                                                                                    &
+        \visible<\iftoggle{static}{1-}{3-}>{\dsptikzfig{strings/structure/monoid/init}[colour=comb]}       &
+        \visible<\iftoggle{static}{1-}{3-}>{introduce}                                                     &
+        \visible<\iftoggle{static}{1-}{3-}>{\dsptikzfig{strings/category/identity}[colour=comb]}           &
+        \visible<\iftoggle{static}{1-}{3-}>{identity}                                                        \\
+        \visible<\iftoggle{static}{1-}{2-}>{\dsptikzfig{circuits/components/gates/or}}                     &
+        \visible<\iftoggle{static}{1-}{2-}>{OR gate}                                                       &
+        \visible<\iftoggle{static}{1-}{3-}>{\,\,\dsptikzfig{strings/structure/comonoid/copy}[colour=comb]} &
+        \visible<\iftoggle{static}{1-}{3-}>{fork}                                                          &
+        \visible<\iftoggle{static}{1-}{3-}>{\dsptikzfig{strings/symmetric/symmetry}[colour=comb]}          &
+        \visible<\iftoggle{static}{1-}{3-}>{symmetry}                                                        \\
+        \visible<\iftoggle{static}{1-}{2-}>{\dsptikzfig{circuits/components/gates/not}}                    &
+        \visible<\iftoggle{static}{1-}{2-}>{NOT gate}                                                      &
+        \visible<\iftoggle{static}{1-}{3-}>{\,\,\dsptikzfig{strings/structure/monoid/merge}[colour=comb]}  &
+        \visible<\iftoggle{static}{1-}{3-}>{join}                                                            \\
+                                                                                                           &
+                                                                                                           &
         \,\,\,\,
-        \visible<3->{\dsptikzfig{strings/structure/comonoid/discard}[colour=comb]}
-        \hspace{0.175cm}                                                            &
-        \visible<3->{eliminate}                                                     &
+        \visible<\iftoggle{static}{1-}{3-}>{\dsptikzfig{strings/structure/comonoid/discard}[colour=comb]}
+        \hspace{0.175cm}                                                                                   &
+        \visible<\iftoggle{static}{1-}{3-}>{eliminate}                                                     &
     \end{tabular}
 
     \vspace{0.5em}
@@ -98,7 +98,7 @@
                           &
 
             \(
-            \dsptikzfig{strings/category/f-2-2}[box=f,colour=seq]
+            \dsptikzfig{strings/category/f-\iftoggle{static}{1-}{2-}2}[box=f,colour=seq]
             \,\,\Rightarrow\,\,
             \dsptikzfig{strings/traced/trace-rhs}[box=f,colour=seq]
             \)
@@ -106,7 +106,7 @@
 
         \vspace{2em}
 
-        \visible<3->{
+        \visible<\iftoggle{static}{1-}{3-}>{
             \alert{Dark} circuits \(
             \dsptikzfig{strings/category/f}[box=f,colour=seq]
             \) may contain \\[1em] delay or feedback.
